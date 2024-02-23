@@ -3,18 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Table Editor</title>
+    <title>Content Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        select, input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Online Table Editor</h1>
+    <h1>Content Generator</h1>
     <form method="POST">
-        <!-- Form fields for table data -->
-        <!-- You can use Jinja2 templating to fill in initial values from table_data -->
-        <input type="text" name="section" value="{{ table_data[0]['Section'] }}">
-        <input type="text" name="topic" value="{{ table_data[0]['Topic'] }}">
-        <input type="text" name="length" value="{{ table_data[0]['Length'] }}">
-        <input type="text" name="style" value="{{ table_data[0]['Style'] }}">
-        <input type="text" name="generated_text" value="{{ table_data[0]['Generated text'] }}">
+        <table>
+            <tr>
+                <th>Section</th>
+                <th>Topic</th>
+                <th>Length</th>
+                <th>Style</th>
+                <th>Generated text</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="section">
+                        <option value="Health and Wellness">Health and Wellness</option>
+                        <option value="Personal Finance">Personal Finance</option>
+                        <option value="Technology and Gadgets">Technology and Gadgets</option>
+                        <option value="DIY and Home Improvement">DIY and Home Improvement</option>
+                        <option value="Travel and Adventure">Travel and Adventure</option>
+                    </select>
+                </td>
+                <td><input type="text" name="topic" value="{{ table_data[0]['Topic'] }}"></td>
+                <td>
+                    <select name="length">
+                        <option value="200 words">200 words</option>
+                        <option value="300 words">300 words</option>
+                        <option value="500 words">500 words</option>
+                        <option value="700 words">700 words</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="style">
+                        <option value="Formal">Formal</option>
+                        <option value="Informal">Informal</option>
+                        <option value="Pessimistic">Pessimistic</option>
+                        <option value="Optimistic">Optimistic</option>
+                        <option value="Tense">Tense</option>
+                        <option value="Curious">Curious</option>
+                        <option value="Uplifting">Uplifting</option>
+                        <option value="Aggressive">Aggressive</option>
+                    </select>
+                </td>
+                <td><input type="text" name="generated_text" value="{{ table_data[0]['Generated text'] }}"></td>
+            </tr>
+        </table>
         <button type="submit">Save</button>
     </form>
 </body>
