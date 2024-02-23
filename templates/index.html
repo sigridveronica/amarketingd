@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Table Editor</title>
+</head>
+<body>
+    <h1>Online Table Editor</h1>
+    <form method="POST">
+        <!-- Form fields for table data -->
+        <!-- You can use Jinja2 templating to fill in initial values from table_data -->
+        <input type="text" name="section" value="{{ table_data[0]['Section'] }}">
+        <input type="text" name="topic" value="{{ table_data[0]['Topic'] }}">
+        <input type="text" name="length" value="{{ table_data[0]['Length'] }}">
+        <input type="text" name="style" value="{{ table_data[0]['Style'] }}">
+        <input type="text" name="generated_text" value="{{ table_data[0]['Generated text'] }}">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
