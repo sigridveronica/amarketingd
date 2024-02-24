@@ -11,14 +11,14 @@ table_data = [
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # Update table data with form data
+        # Update table data with form data including the subcategory
         table_data[0]['Section'] = request.form['section']
         table_data[0]['Topic'] = request.form['topic']
         table_data[0]['Length'] = request.form['length']
         table_data[0]['Generated text'] = request.form['generated_text']
         
         # Save data to CSV file
-        save_to_csv(table_data)
+        save_to_csv(table_data, request)
         
     return render_template('index.html', table_data=table_data)
 

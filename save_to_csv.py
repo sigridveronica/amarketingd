@@ -1,6 +1,6 @@
 import csv
 
-def save_to_csv(table_data):
+def save_to_csv(table_data, request):
     # Read existing data from CSV file
     existing_data = []
     try:
@@ -13,12 +13,13 @@ def save_to_csv(table_data):
     # Increment article number
     article_number = len(existing_data) + 1
 
-    # Prepare fieldnames
-    fieldnames = ['Article Number', 'Section', 'Topic', 'Length', 'Style', 'Generated text', 'Links', 'Visits', 'Click on links']
+    # Prepare fieldnames including the new 'Tag' column
+    fieldnames = ['Article Number', 'Section', 'Subcategory', 'Topic', 'Length', 'Style', 'Generated text', 'Links', 'Visits', 'Click on links']
 
-    # Add article number to each row of table_data
+    # Add article number and tag to each row of table_data
     for row in table_data:
         row['Article Number'] = article_number
+        row['Subcategory'] = request.form['subcategory']  # Assuming the subcategory is passed through the form
         article_number += 1
 
     # Combine existing data with new data
@@ -36,6 +37,7 @@ def save_to_csv(table_data):
             # Filter out keys not present in fieldnames
             filtered_row = {key: row[key] for key in fieldnames if key in row}
             writer.writerow(filtered_row)
+
 
 if __name__ == '__main__':
     # Sample table_data, you should replace this with your actual data
