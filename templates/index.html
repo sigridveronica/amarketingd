@@ -57,6 +57,7 @@
         <table>
             <tr>
                 <th>Section</th>
+                <th>Subcategory</th>
                 <th>Topic</th>
                 <th>Length</th>
                 <th>Style</th>
@@ -64,7 +65,7 @@
             </tr>
             <tr>
                 <td>
-                    <select name="section">
+                    <select name="section" id="section" onchange="updateSubcategories(this)">
                         <option value="Health and Wellness">Health and Wellness</option>
                         <option value="Personal Finance">Personal Finance</option>
                         <option value="Technology and Gadgets">Technology and Gadgets</option>
@@ -72,6 +73,12 @@
                         <option value="Travel and Adventure">Travel and Adventure</option>
                     </select>
                 </td>
+                <td>
+                    <select name="subcategory" id="subcategory">
+                        <!-- Subcategories will be dynamically populated based on the selected section -->
+                    </select>
+                </td>
+                
                 <td><input type="text" name="topic" value="{{ table_data[0]['Topic'] }}"></td>
                 <td>
                     <select name="length">
@@ -98,5 +105,145 @@
         </table>
         <button type="submit">Save</button>
     </form>
+    <script>
+        function updateSubcategories(select) {
+            var subcategorySelect = document.getElementById("subcategory");
+            subcategorySelect.innerHTML = ""; // Clear previous options
+            var section = select.value;
+            var subcategories = {};
+
+            if (section === "Personal Finance") {
+                subcategories = {
+                    "Budgeting and Money Management": "Budgeting and Money Management",
+                    "Investing and Wealth Building": "Investing and Wealth Building",
+                    "Retirement Planning": "Retirement Planning",
+                    "Debt Management and Credit": "Debt Management and Credit",
+                    "Taxes and Tax Planning": "Taxes and Tax Planning",
+                    "Saving Strategies": "Saving Strategies",
+                    "Financial Independence and Early Retirement (FIRE)": "Financial Independence and Early Retirement (FIRE)",
+                    "Frugal Living Tips": "Frugal Living Tips",
+                    "Real Estate Investing": "Real Estate Investing",
+                    "Passive Income Ideas": "Passive Income Ideas",
+                    "Financial Education and Literacy": "Financial Education and Literacy",
+                    "Side Hustles and Extra Income": "Side Hustles and Extra Income",
+                    "Student Loans and Education Financing": "Student Loans and Education Financing",
+                    "Insurance Planning (Life, Health, Property)": "Insurance Planning (Life, Health, Property)",
+                    "Estate Planning and Wills": "Estate Planning and Wills",
+                    "Personal Finance Apps and Tools": "Personal Finance Apps and Tools",
+                    "Financial Goals Setting": "Financial Goals Setting",
+                    "Financial Psychology and Behavioral Economics": "Financial Psychology and Behavioral Economics",
+                    "Family Finance and Money Matters": "Family Finance and Money Matters",
+                    "Financial Independence Retire Early (FIRE) Community": "Financial Independence Retire Early (FIRE) Community"
+                };
+            } else if (section === "Health and Wellness") {
+                subcategories = {
+                    "Fitness and Exercise": "Fitness and Exercise",
+                    "Nutrition and Diet Planning": "Nutrition and Diet Planning",
+                    "Mental Health and Wellbeing": "Mental Health and Wellbeing",
+                    "Yoga and Meditation": "Yoga and Meditation",
+                    "Healthy Eating Habits": "Healthy Eating Habits",
+                    "Weight Loss and Management": "Weight Loss and Management",
+                    "Sleep Hygiene and Sleep Disorders": "Sleep Hygiene and Sleep Disorders",
+                    "Stress Management Techniques": "Stress Management Techniques",
+                    "Self-Care Practices": "Self-Care Practices",
+                    "Holistic Health and Alternative Medicine": "Holistic Health and Alternative Medicine",
+                    "Women's Health Issues": "Women's Health Issues",
+                    "Men's Health Issues": "Men's Health Issues",
+                    "Aging Gracefully and Senior Health": "Aging Gracefully and Senior Health",
+                    "Chronic Illness Management": "Chronic Illness Management",
+                    "Addiction Recovery and Rehabilitation": "Addiction Recovery and Rehabilitation",
+                    "Preventive Healthcare and Screening": "Preventive Healthcare and Screening",
+                    "Healthy Aging and Longevity": "Healthy Aging and Longevity",
+                    "Mindfulness and Mindful Living": "Mindfulness and Mindful Living",
+                    "Wellness Retreats and Travel": "Wellness Retreats and Travel",
+                    "Health Tracking Devices and Apps": "Health Tracking Devices and Apps"
+                };
+                
+            }
+            else if (section === "DIY and Home Improvement") {
+                subcategories = {
+                    "Home Renovation Ideas": "Home Renovation Ideas",
+                    "DIY Crafts and Projects": "DIY Crafts and Projects",
+                    "Woodworking and Carpentry": "Woodworking and Carpentry",
+                    "Interior Design Inspiration": "Interior Design Inspiration",
+                    "Garden and Outdoor Spaces": "Garden and Outdoor Spaces",
+                    "Home Organization Tips": "Home Organization Tips",
+                    "Energy Efficiency Upgrades": "Energy Efficiency Upgrades",
+                    "Home Repair and Maintenance": "Home Repair and Maintenance",
+                    "Painting and Decorating Techniques": "Painting and Decorating Techniques",
+                    "DIY Furniture Building": "DIY Furniture Building",
+                    "Landscaping and Outdoor Design": "Landscaping and Outdoor Design",
+                    "Kitchen Remodeling Ideas": "Kitchen Remodeling Ideas",
+                    "Bathroom Design and Renovation": "Bathroom Design and Renovation",
+                    "Sustainable Living Practices": "Sustainable Living Practices",
+                    "Upcycling and Repurposing Projects": "Upcycling and Repurposing Projects",
+                    "Home Security Systems": "Home Security Systems",
+                    "Plumbing and Electrical DIY Fixes": "Plumbing and Electrical DIY Fixes",
+                    "Flooring Options and Installation": "Flooring Options and Installation",
+                    "Smart Home Technology Integration": "Smart Home Technology Integration",
+                    "DIY Home Improvement Blogs and Influencers": "DIY Home Improvement Blogs and Influencers"
+                };
+            } else if (section === "Technology and Gadgets") {
+                subcategories = {
+                    "Latest Tech News and Trends": "Latest Tech News and Trends",
+                    "Gadgets and Gizmos Reviews": "Gadgets and Gizmos Reviews",
+                    "Smart Home Devices and Automation": "Smart Home Devices and Automation",
+                    "Mobile Apps and App Development": "Mobile Apps and App Development",
+                    "Wearable Technology": "Wearable Technology",
+                    "Virtual Reality (VR) and Augmented Reality (AR)": "Virtual Reality (VR) and Augmented Reality (AR)",
+                    "Internet of Things (IoT) Innovations": "Internet of Things (IoT) Innovations",
+                    "Cybersecurity and Online Privacy": "Cybersecurity and Online Privacy",
+                    "Gaming and eSports Updates": "Gaming and eSports Updates",
+                    "Artificial Intelligence (AI) and Machine Learning": "Artificial Intelligence (AI) and Machine Learning",
+                    "Tech Startups and Entrepreneurship": "Tech Startups and Entrepreneurship",
+                    "Coding and Programming Resources": "Coding and Programming Resources",
+                    "Tech Education and Courses": "Tech Education and Courses",
+                    "Tech Gadgets for Productivity": "Tech Gadgets for Productivity",
+                    "DIY Electronics Projects": "DIY Electronics Projects",
+                    "Social Media Updates and Tips": "Social Media Updates and Tips",
+                    "Digital Marketing Strategies": "Digital Marketing Strategies",
+                    "Tech for Healthcare and Wellness": "Tech for Healthcare and Wellness",
+                    "Tech for Education and Learning": "Tech for Education and Learning",
+                    "Future Tech Predictions and Speculations": "Future Tech Predictions and Speculations"
+                };
+            } else if (section === "Travel and Adventure") {
+                subcategories = {
+                    "Solo Travel Adventures": "Solo Travel Adventures",
+                    "Family-Friendly Destinations": "Family-Friendly Destinations",
+                    "Budget Travel Tips": "Budget Travel Tips",
+                    "Adventure Travel Experiences": "Adventure Travel Experiences",
+                    "Backpacking and Hiking Trails": "Backpacking and Hiking Trails",
+                    "Cultural Immersion and Local Experiences": "Cultural Immersion and Local Experiences",
+                    "Sustainable and Eco-Friendly Travel": "Sustainable and Eco-Friendly Travel",
+                    "Road Trips and RV Travel": "Road Trips and RV Travel",
+                    "Luxury Travel Experiences": "Luxury Travel Experiences",
+                    "Off-the-Beaten-Path Destinations": "Off-the-Beaten-Path Destinations",
+                    "Wildlife and Nature Exploration": "Wildlife and Nature Exploration",
+                    "Volunteer and Community-Based Travel": "Volunteer and Community-Based Travel",
+                    "Food and Culinary Tourism": "Food and Culinary Tourism",
+                    "Travel Photography Tips": "Travel Photography Tips",
+                    "Travel Planning and Itinerary Ideas": "Travel Planning and Itinerary Ideas",
+                    "Travel Safety and Security Tips": "Travel Safety and Security Tips",
+                    "Digital Nomad Lifestyle": "Digital Nomad Lifestyle",
+                    "Travel Gear and Packing Lists": "Travel Gear and Packing Lists",
+                    "Travel Insurance and Emergency Preparedness": "Travel Insurance and Emergency Preparedness",
+                    "Travel Hacking and Loyalty Programs": "Travel Hacking and Loyalty Programs"
+                };
+            }
+
+            // Add other section cases...
+
+            // Populate subcategory dropdown with options
+            for (var key in subcategories) {
+                var option = document.createElement("option");
+                option.value = subcategories[key];
+                option.text = subcategories[key];
+                subcategorySelect.appendChild(option);
+            }
+        }
+
+        // Call the function initially to populate subcategories based on the default selected section
+        updateSubcategories(document.getElementById("section"));
+    </script>
 </body>
 </html>

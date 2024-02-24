@@ -1,24 +1,27 @@
-Article Number,Section,Topic,Length,Style,Generated text
-1,Personal Finance,Value 2,200 words,Formal,Value 4
-2,Health and Wellness,Value 2,200 words,Formal,Value 4
-3,Health and Wellness,Value 2,200 words,Formal,Value 4
-4,Health and Wellness,Value 2,200 words,Formal,Value 4
-5,Health and Wellness,Value 2,200 words,Formal,Value 4
-6,Health and Wellness,Value 2,200 words,Formal,Value 4
-7,Travel and Adventure,Value 2,200 words,Formal,Value 4
-8,Technology and Gadgets,Value 2,200 words,Formal,Value 4
-9,Health and Wellness,Value 2,200 words,Formal,Value 4
-10,Health and Wellness,Value 2,200 words,Formal,Value 4
-11,Health and Wellness,Value 2,200 words,Formal,Value 4
-12,Health and Wellness,Value 2,200 words,Formal,Value 4
-13,Health and Wellness,Value 2,200 words,Formal,Value 4
-14,Technology and Gadgets,hdhdhdd,200 words,Formal,Value 4
-15,DIY and Home Improvement,kdkddkdkd,200 words,Formal,Value 4
-16,Travel and Adventure,kdkddkdkd,700 words,Formal,Value 4
-17,Personal Finance,kdkddkdkd,200 words,Formal,Value 4
-18,Technology and Gadgets,kdkddkdkd,200 words,Formal,Value 4
-19,DIY and Home Improvement,kdkddkdkd,200 words,Formal,Value 4
-20,Travel and Adventure,kdkddkdkd,200 words,Formal,Value 4
-21,DIY and Home Improvement,khkhk,500 words,Informal,Value 4
-22,Value 1,Value 2,Value 3,,Value 4
-23,Value 1,Value 2,Value 3,,Value 4
+Article Number;Section;Topic;Length;Style;Generated text;Links;Visits;Click on links
+1;Personal Finance;bitcoin;200 words;Formal;Value 4;;1;1
+2;Health and Wellness;apples;200 words;Formal;Value 4;;1;1
+3;Health and Wellness;bananas;200 words;Formal;Value 4;;1;1
+4;Health and Wellness;skydiving;200 words;Formal;Value 4;;1;1
+5;Health and Wellness;surfing;200 words;Formal;Value 4;;1;1
+6;Health and Wellness;skiing;200 words;Formal;Value 4;;1;1
+7;Travel and Adventure;USA;200 words;Formal;Value 4;;1;1
+8;Technology and Gadgets;fpga;200 words;Formal;Value 4;;1;1
+9;Health and Wellness;collagen;200 words;Formal;Value 4;;1;1
+10;Health and Wellness;proteins;200 words;Formal;Value 4;;1;1
+11;Health and Wellness;Muscle gain;200 words;Formal;Value 4;;1;1
+12;Health and Wellness;Weight loss;200 words;Formal;Value 4;;1;1
+13;Health and Wellness;Get your dream body;200 words;Formal;Value 4;;1;1
+14;Technology and Gadgets;Best products on computers;200 words;Formal;Value 4;;1;1
+15;DIY and Home Improvement;roomba;200 words;Formal;Value 4;;1;1
+16;Travel and Adventure;Base jumping;700 words;Formal;Value 4;;1;1
+17;Personal Finance;Cardano;200 words;Formal;Value 4;;1;1
+18;Technology and Gadgets;Iphone 14;200 words;Formal;Value 4;;1;1
+19;DIY and Home Improvement;Best products to clean;200 words;Formal;Value 4;;1;1
+20;Travel and Adventure;Climbing;200 words;Formal;Value 4;;1;1
+21;DIY and Home Improvement;khkhk;500 words;Informal;Value 4;;1;1
+22;;;;;Value 4;;1;1
+23;;;;;Value 4;;1;1
+24;Personal Finance;Value 2;200 words;;Value 4;;1;1
+25;DIY and Home Improvement;Value 2;200 words;;Value 4;;1;1
+26;DIY and Home Improvement;Value 2;200 words;;Value 4;;1;1
